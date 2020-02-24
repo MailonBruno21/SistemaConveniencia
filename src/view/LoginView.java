@@ -27,7 +27,7 @@ public class LoginView extends javax.swing.JFrame {
         controller = new LoginController(this);
 
     }
-
+     
     /*
     * CONFIGURACOES DE INICIALIZACAO DA TELA DE LOGIN
      */

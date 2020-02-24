@@ -5,18 +5,28 @@
  */
 package view;
 
-/**
- *
- * @author pedri
- */
+import extencaoBiblioteca.CustomScrolBarUI;
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JComponent;
+import javax.swing.JScrollBar;
+
 public class MenuView extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuView
      */
-    public MenuView() {
+       Graphics graficos;
+       
+       public MenuView() {
         initComponents();
+        
+        
+        
     }
+    
+       
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,31 +37,119 @@ public class MenuView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        menuJPanel = new javax.swing.JPanel();
+        menuItemJPanel = new javax.swing.JPanel();
+        painelMenuItemJPanel = new javax.swing.JPanel();
+        scrollMenuItemJScrollPane = new javax.swing.JScrollPane();
+        painelScrollMenuItemJScrollPane = new javax.swing.JPanel();
+        menuItemJlabel = new javax.swing.JLabel();
+        menuJLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MenuJFrame");
+        setMaximumSize(new java.awt.Dimension(1980, 1080));
+        setName("MenuJFrame"); // NOI18N
+        setUndecorated(true);
+
+        menuJPanel.setMaximumSize(getMaximumSize());
+        menuJPanel.setMinimumSize(getMinimumSize());
+        menuJPanel.setName(""); // NOI18N
+        menuJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        menuItemJPanel.setAlignmentX(0.0F);
+        menuItemJPanel.setAlignmentY(0.0F);
+        menuItemJPanel.setMaximumSize(new java.awt.Dimension(422, 668));
+        menuItemJPanel.setName(""); // NOI18N
+        menuItemJPanel.setOpaque(false);
+        menuItemJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        painelMenuItemJPanel.setOpaque(false);
+        painelMenuItemJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        scrollMenuItemJScrollPane.setBackground(new Color(0,0,0,0));
+
+        scrollMenuItemJScrollPane.setViewportBorder(null);
+
+        scrollMenuItemJScrollPane.getVerticalScrollBar().setUI(new CustomScrolBarUI());
+        scrollMenuItemJScrollPane.setOpaque(false);
+        scrollMenuItemJScrollPane.getViewport().setOpaque(false);
+        scrollMenuItemJScrollPane.setBorder(null);
+        scrollMenuItemJScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollMenuItemJScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollMenuItemJScrollPane.setAlignmentX(0.0F);
+        scrollMenuItemJScrollPane.setAlignmentY(0.0F);
+        scrollMenuItemJScrollPane.setMaximumSize(painelMenuItemJPanel.getMaximumSize());
+        scrollMenuItemJScrollPane.setMinimumSize(painelMenuItemJPanel.getMinimumSize());
+        scrollMenuItemJScrollPane.setPreferredSize(painelMenuItemJPanel.getPreferredSize());
+
+        painelScrollMenuItemJScrollPane.setOpaque(false);
+
+        javax.swing.GroupLayout painelScrollMenuItemJScrollPaneLayout = new javax.swing.GroupLayout(painelScrollMenuItemJScrollPane);
+        painelScrollMenuItemJScrollPane.setLayout(painelScrollMenuItemJScrollPaneLayout);
+        painelScrollMenuItemJScrollPaneLayout.setHorizontalGroup(
+            painelScrollMenuItemJScrollPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 365, Short.MAX_VALUE)
+        );
+        painelScrollMenuItemJScrollPaneLayout.setVerticalGroup(
+            painelScrollMenuItemJScrollPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 425, Short.MAX_VALUE)
+        );
+
+        scrollMenuItemJScrollPane.setViewportView(painelScrollMenuItemJScrollPane);
+
+        painelMenuItemJPanel.add(scrollMenuItemJScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 382, 425));
+
+        menuItemJPanel.add(painelMenuItemJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 230, 382, 425));
+
+        menuItemJlabel.setBackground(new java.awt.Color(102, 255, 102));
+        menuItemJlabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        menuItemJlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundMenuItem.png"))); // NOI18N
+        menuItemJlabel.setToolTipText("");
+        menuItemJlabel.setAlignmentY(0.0F);
+        menuItemJlabel.setMinimumSize(new java.awt.Dimension(0, 0));
+        menuItemJPanel.add(menuItemJlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 422, 668));
+
+        menuJPanel.add(menuItemJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 26, -1, -1));
+
+        menuJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menuJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundMenu.png"))); // NOI18N
+        menuJLabel.setToolTipText("");
+        menuJLabel.setMaximumSize(getMaximumSize());
+        menuJLabel.setMinimumSize(getMinimumSize());
+        menuJPanel.add(menuJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(menuJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(menuJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public int VariacaoPixelMenuItem(int variacao){
+        return 0;
+        
+    }
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+       
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -72,6 +170,7 @@ public class MenuView extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MenuView().setVisible(true);
             }
@@ -79,5 +178,13 @@ public class MenuView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel menuItemJPanel;
+    private javax.swing.JLabel menuItemJlabel;
+    private javax.swing.JLabel menuJLabel;
+    private javax.swing.JPanel menuJPanel;
+    private javax.swing.JPanel painelMenuItemJPanel;
+    private javax.swing.JPanel painelScrollMenuItemJScrollPane;
+    private javax.swing.JScrollPane scrollMenuItemJScrollPane;
     // End of variables declaration//GEN-END:variables
 }
