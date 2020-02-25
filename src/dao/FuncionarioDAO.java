@@ -12,6 +12,7 @@ public class FuncionarioDAO {
 
     public FuncionarioDAO(Connection conexao) {
         this.conexaoFuncionario = conexao;
+        System.out.println(conexao);
     }
     /*
     * INSERIR FUNCIONARIO  AO BANCO DE DADOS
@@ -131,7 +132,7 @@ public class FuncionarioDAO {
 
     public boolean autenticarLoginFuncionario(Funcionario funcionario) throws SQLException {
 
-        String sql = "select * from funcionario where usuario = '"+funcionario.getUsuario()+"' and senha = '"+funcionario.getSenha()+"';";
+        String sql = "select * from funcionario where username = '"+funcionario.getUsuario()+"' and senha = '"+funcionario.getSenha()+"';";
         PreparedStatement statement = conexaoFuncionario.prepareStatement(sql);
         statement.execute();
         
