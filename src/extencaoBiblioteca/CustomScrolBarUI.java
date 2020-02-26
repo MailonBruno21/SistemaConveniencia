@@ -62,9 +62,9 @@ public class CustomScrolBarUI extends BasicScrollBarUI {
           color = Color.GRAY; // change color
         }
         g2.setPaint(color);
-        g2.fillRoundRect(r.x, r.y, r.width, r.height, 10, 10);
-        g2.setPaint(Color.RED);
-        g2.drawRoundRect(r.x, r.y, r.width, r.height, 10, 10);
+        g2.fillRoundRect(r.x, r.y, r.width, r.height, 6, 6);
+        g2.setPaint(Color.WHITE);
+        g2.drawRoundRect(r.x, r.y, r.width, r.height, 6, 6);
         g2.dispose();
       }
 
