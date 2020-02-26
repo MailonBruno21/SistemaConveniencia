@@ -86,6 +86,19 @@ public class MenuView extends javax.swing.JFrame {
         iconeAddConta = new javax.swing.JLabel();
         textoAddContaJLabel = new javax.swing.JLabel();
         backgroundAddContaJLabel = new javax.swing.JLabel();
+        painelFuncionarioJPanel = new javax.swing.JPanel();
+        painelExpansivoFuncionarioJPanel = new javax.swing.JPanel();
+        funcionarioJLabel = new javax.swing.JLabel();
+        indicadorFuncionarioJPanel = new javax.swing.JPanel();
+        indicadorFuncionarioJLabel = new javax.swing.JLabel();
+        painelBuscarFuncionarioJPanel = new javax.swing.JPanel();
+        iconeBuscarFuncionarioJLabel = new javax.swing.JLabel();
+        textoBuscarFuncionarioLabel = new javax.swing.JLabel();
+        backgroundBuscarFuncionarioJLabel = new javax.swing.JLabel();
+        painelAddFuncionarioJPanel = new javax.swing.JPanel();
+        iconeAddFuncionario = new javax.swing.JLabel();
+        textoAddFuncionarioJLabel = new javax.swing.JLabel();
+        backgroundAddFuncionarioJLabel = new javax.swing.JLabel();
         menuItemJlabel = new javax.swing.JLabel();
         menuJLabel = new javax.swing.JLabel();
 
@@ -388,7 +401,7 @@ public class MenuView extends javax.swing.JFrame {
 
         painelScrollMenuItemJScrollPane.add(painelCaixaJPanel);
         painelCaixaJPanel.setBounds(0, 180, 382, 175);
-        painelCaixaJPanel.setBounds(0, 27, 382, 155);
+        painelCaixaJPanel.setBounds(0, 27, 382, 27);
 
         painelContasPagarJPanel.setMinimumSize(new java.awt.Dimension(380, 160));
         painelContasPagarJPanel.setOpaque(false);
@@ -441,7 +454,7 @@ public class MenuView extends javax.swing.JFrame {
         painelBuscarContaJPanel.add(iconeBuscarContaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 0, 40, 40));
 
         textoBuscarContaLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 24)); // NOI18N
-        textoBuscarContaLabel.setText("Abrir Caixa");
+        textoBuscarContaLabel.setText("Buscar Cliente");
         textoBuscarContaLabel.setAlignmentY(0.0F);
         painelBuscarContaJPanel.add(textoBuscarContaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 7, 261, 26));
 
@@ -469,7 +482,7 @@ public class MenuView extends javax.swing.JFrame {
         painelAddContaJPanel.add(iconeAddConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 0, 42, 43));
 
         textoAddContaJLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 24)); // NOI18N
-        textoAddContaJLabel.setText("Relatorio Caixa");
+        textoAddContaJLabel.setText("Cadastrar Cliente");
         textoAddContaJLabel.setAlignmentY(0.0F);
         painelAddContaJPanel.add(textoAddContaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 7, 261, 26));
 
@@ -481,7 +494,100 @@ public class MenuView extends javax.swing.JFrame {
 
         painelScrollMenuItemJScrollPane.add(painelContasPagarJPanel);
         painelContasPagarJPanel.setBounds(0, 355, 382, 127);
-        painelContasPagarJPanel.setBounds(0, 54, 382, 127);
+        painelContasPagarJPanel.setBounds(0, 54, 382, 27);
+
+        painelFuncionarioJPanel.setMinimumSize(new java.awt.Dimension(380, 160));
+        painelFuncionarioJPanel.setOpaque(false);
+        painelFuncionarioJPanel.setPreferredSize(new java.awt.Dimension(380, 155));
+        painelFuncionarioJPanel.setLayout(null);
+
+        painelExpansivoFuncionarioJPanel.setOpaque(false);
+        painelExpansivoFuncionarioJPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                painelExpansivoFuncionarioJPanelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                painelExpansivoFuncionarioJPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                painelExpansivoFuncionarioJPanelMouseExited(evt);
+            }
+        });
+        painelExpansivoFuncionarioJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        funcionarioJLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        funcionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemFuncionario.png"))); // NOI18N
+        funcionarioJLabel.setPreferredSize(new java.awt.Dimension(382, 20));
+        painelExpansivoFuncionarioJPanel.add(funcionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 20));
+
+        indicadorFuncionarioJPanel.setOpaque(false);
+        indicadorFuncionarioJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        indicadorFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaFechado.png"))); // NOI18N
+        indicadorFuncionarioJPanel.add(indicadorFuncionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 15, 15));
+
+        painelExpansivoFuncionarioJPanel.add(indicadorFuncionarioJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 1, 15, 15));
+
+        painelFuncionarioJPanel.add(painelExpansivoFuncionarioJPanel);
+        painelExpansivoFuncionarioJPanel.setBounds(0, 0, 382, 27);
+
+        painelBuscarFuncionarioJPanel.setOpaque(false);
+        painelBuscarFuncionarioJPanel.setVisible(false);
+        painelBuscarFuncionarioJPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                painelBuscarFuncionarioJPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                painelBuscarFuncionarioJPanelMouseExited(evt);
+            }
+        });
+        painelBuscarFuncionarioJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        iconeBuscarFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconeRegistradora.png"))); // NOI18N
+        painelBuscarFuncionarioJPanel.add(iconeBuscarFuncionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 0, 40, 40));
+
+        textoBuscarFuncionarioLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 24)); // NOI18N
+        textoBuscarFuncionarioLabel.setText("Buscar Funcionario");
+        textoBuscarFuncionarioLabel.setAlignmentY(0.0F);
+        painelBuscarFuncionarioJPanel.add(textoBuscarFuncionarioLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 7, 261, 26));
+
+        backgroundBuscarFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png"))); // NOI18N
+        painelBuscarFuncionarioJPanel.add(backgroundBuscarFuncionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 382, 43));
+
+        painelFuncionarioJPanel.add(painelBuscarFuncionarioJPanel);
+        painelBuscarFuncionarioJPanel.setBounds(0, 27, 382, 50);
+
+        painelAddFuncionarioJPanel.setBackground(new java.awt.Color(102, 255, 153));
+        painelAddFuncionarioJPanel.setOpaque(false);
+        painelAddFuncionarioJPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                painelAddFuncionarioJPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                painelAddFuncionarioJPanelMouseExited(evt);
+            }
+        });
+        painelAddFuncionarioJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        painelAddFuncionarioJPanel.setVisible(false);
+
+        iconeAddFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconeRelatorioCaixa.png"))); // NOI18N
+        iconeAddFuncionario.setToolTipText("");
+        painelAddFuncionarioJPanel.add(iconeAddFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 0, 42, 43));
+
+        textoAddFuncionarioJLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 24)); // NOI18N
+        textoAddFuncionarioJLabel.setText("Cadastrar Cliente");
+        textoAddFuncionarioJLabel.setAlignmentY(0.0F);
+        painelAddFuncionarioJPanel.add(textoAddFuncionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 7, 261, 26));
+
+        backgroundAddFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png"))); // NOI18N
+        painelAddFuncionarioJPanel.add(backgroundAddFuncionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 382, 43));
+
+        painelFuncionarioJPanel.add(painelAddFuncionarioJPanel);
+        painelAddFuncionarioJPanel.setBounds(0, 77, 382, 50);
+
+        painelScrollMenuItemJScrollPane.add(painelFuncionarioJPanel);
+        painelFuncionarioJPanel.setBounds(0, 482, 382, 127);
+        painelFuncionarioJPanel.setBounds(0, 81, 382, 27);
 
         scrollMenuItemJScrollPane.setViewportView(painelScrollMenuItemJScrollPane);
 
@@ -537,6 +643,9 @@ public class MenuView extends javax.swing.JFrame {
             
             comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
             painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
+            
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
 
             //TIMER DE PROCESSAMENTO
             try {
@@ -545,7 +654,7 @@ public class MenuView extends javax.swing.JFrame {
                 Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
             }
             //REDIMENSIONA O PAINEL PARA APARECER A BARRA DE ROLAGEM
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight());                        
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
              painelScrollMenuItemJScrollPane.setPreferredSize(size);
              
             //IMAGEM DO INDICADOR
@@ -583,13 +692,17 @@ public class MenuView extends javax.swing.JFrame {
             }
 
             comparaExp = (painelCaixaAbrirFecharJPanel.isVisible() == false) ? 27 : 180;
-            painelCaixaJPanel.setBounds(0, painelVendasJPanel.getHeight(), XMENU, comparaExp);
+            painelCaixaJPanel.setBounds(0, painelVendasJPanel.getHeight(), 392, comparaExp);
             
             comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
             painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
             
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
+
+            
             //REDIMENSIONA O PAINEL PARA APARECER A BARRA DE ROLAGEM
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight());                        
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
             painelScrollMenuItemJScrollPane.setPreferredSize(size);
         }
     }//GEN-LAST:event_painelExpansivoVendasJPanelMouseClicked
@@ -611,11 +724,13 @@ public class MenuView extends javax.swing.JFrame {
         if (painelCaixaAbrirFecharJPanel.isVisible() == false) {
 
             painelCaixaJPanel.setSize(XMENU, 180);
-            
-            
-            
+                   
+                                                        
             comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
             painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
+            
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
 
             try {
                 Thread.sleep(1);
@@ -624,7 +739,7 @@ public class MenuView extends javax.swing.JFrame {
             }
             indicadorCaixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaAberto.png"))); // NOI18N
             
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight());                        
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
             painelScrollMenuItemJScrollPane.setPreferredSize(size);
 
             painelCaixaAbrirFecharJPanel.setVisible(true);
@@ -656,7 +771,10 @@ public class MenuView extends javax.swing.JFrame {
             comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
             painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
             
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight());                        
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
+            
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
             painelScrollMenuItemJScrollPane.setPreferredSize(size);
 
         }
@@ -817,10 +935,13 @@ public class MenuView extends javax.swing.JFrame {
 
     //EFEITO NOS ITENS MENU CONTAS A PAGAR
     private void painelExpansivoContasPagarJPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoContasPagarJPanelMouseClicked
-         
+         int comparaExp;
         if (painelBuscarContaJPanel.isVisible() == false) {
 
             painelContasPagarJPanel.setSize(XMENU, 127);
+            
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
 
             try {
                 Thread.sleep(1);
@@ -832,8 +953,8 @@ public class MenuView extends javax.swing.JFrame {
             painelBuscarContaJPanel.setVisible(true);
             painelAddContaJPanel.setVisible(true);
             
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight());                        
-            painelScrollMenuItemJScrollPane.setPreferredSize(size);
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
+            painelScrollMenuItemJScrollPane.setPreferredSize(size);;
             
 
         } else {
@@ -858,7 +979,10 @@ public class MenuView extends javax.swing.JFrame {
                 Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight());                        
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
+            
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
             painelScrollMenuItemJScrollPane.setPreferredSize(size);
 
         }
@@ -912,6 +1036,103 @@ public class MenuView extends javax.swing.JFrame {
         painelAddContaJPanel.setBounds(0, 77, 382, 50);
     }//GEN-LAST:event_painelAddContaJPanelMouseExited
 
+    
+    //EFEITO NOS ITENS MENU FUNCIONARIO
+    private void painelExpansivoFuncionarioJPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoFuncionarioJPanelMouseClicked
+        if (painelBuscarFuncionarioJPanel.isVisible() == false) {
+
+            painelFuncionarioJPanel.setSize(XMENU, 127);
+
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            indicadorFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaAberto.png"))); // NOI18N
+
+            painelBuscarFuncionarioJPanel.setVisible(true);
+            painelAddFuncionarioJPanel.setVisible(true);
+            
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
+            painelScrollMenuItemJScrollPane.setPreferredSize(size);
+            
+
+        } else {
+
+            painelBuscarFuncionarioJPanel.setVisible(false);
+            painelAddFuncionarioJPanel.setVisible(false);
+            
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            painelFuncionarioJPanel.setSize(XMENU, painelExpansivoFuncionarioJPanel.getHeight());
+            
+
+            indicadorFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaFechado.png"))); // NOI18N
+
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
+            painelScrollMenuItemJScrollPane.setPreferredSize(size);
+
+        }
+    }//GEN-LAST:event_painelExpansivoFuncionarioJPanelMouseClicked
+
+    private void painelExpansivoFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoFuncionarioJPanelMouseEntered
+        funcionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemFuncionarioNegrito.png")));
+    }//GEN-LAST:event_painelExpansivoFuncionarioJPanelMouseEntered
+
+    private void painelExpansivoFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoFuncionarioJPanelMouseExited
+        funcionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemFuncionario.png")));
+    }//GEN-LAST:event_painelExpansivoFuncionarioJPanelMouseExited
+
+    private void painelBuscarFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseEntered
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        backgroundBuscarFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
+        painelBuscarFuncionarioJPanel.setBounds(8, 27, XMENU, 50);
+    }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseEntered
+
+    private void painelBuscarFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseExited
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        backgroundBuscarFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
+        painelBuscarFuncionarioJPanel.setBounds(0, 27, XMENU, 50);
+    }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseExited
+
+    private void painelAddFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseEntered
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        backgroundAddFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
+        painelAddFuncionarioJPanel.setBounds(8, 77, 382, 50);
+    }//GEN-LAST:event_painelAddFuncionarioJPanelMouseEntered
+
+    private void painelAddFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseExited
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        backgroundAddFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
+        painelAddFuncionarioJPanel.setBounds(0, 77, 382, 50);
+    }//GEN-LAST:event_painelAddFuncionarioJPanelMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -942,8 +1163,10 @@ public class MenuView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundAddContaJLabel;
+    private javax.swing.JLabel backgroundAddFuncionarioJLabel;
     private javax.swing.JLabel backgroundBalcaoJLabel;
     private javax.swing.JLabel backgroundBuscarContaJLabel;
+    private javax.swing.JLabel backgroundBuscarFuncionarioJLabel;
     private javax.swing.JLabel backgroundCaixaJLabel;
     private javax.swing.JLabel backgroundComandaJLabel;
     private javax.swing.JLabel backgroundMapaComandaJLabel;
@@ -951,9 +1174,12 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundRelatorioCaixaJLabel;
     private javax.swing.JLabel caixaItemJLabel;
     private javax.swing.JLabel contasPagarJLabel;
+    private javax.swing.JLabel funcionarioJLabel;
     private javax.swing.JLabel iconeAddConta;
+    private javax.swing.JLabel iconeAddFuncionario;
     private javax.swing.JLabel iconeBalcao;
     private javax.swing.JLabel iconeBuscarContaJLabel;
+    private javax.swing.JLabel iconeBuscarFuncionarioJLabel;
     private javax.swing.JLabel iconeCaixaAbrirFecharJLabel;
     private javax.swing.JLabel iconeComanda;
     private javax.swing.JLabel iconeMapaComanda;
@@ -963,6 +1189,8 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JPanel indicadorCaixaItemJPanel;
     private javax.swing.JLabel indicadorContasPagarJLabel;
     private javax.swing.JPanel indicadorContasPagarJPanel;
+    private javax.swing.JLabel indicadorFuncionarioJLabel;
+    private javax.swing.JPanel indicadorFuncionarioJPanel;
     private javax.swing.JLabel indicadorVendasJLabel;
     private javax.swing.JPanel indicadorVendasJPanel;
     private javax.swing.JPanel menuItemJPanel;
@@ -970,15 +1198,19 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JLabel menuJLabel;
     private javax.swing.JPanel menuJPanel;
     private javax.swing.JPanel painelAddContaJPanel;
+    private javax.swing.JPanel painelAddFuncionarioJPanel;
     private javax.swing.JPanel painelBalcaoJPanel;
     private javax.swing.JPanel painelBuscarContaJPanel;
+    private javax.swing.JPanel painelBuscarFuncionarioJPanel;
     private javax.swing.JPanel painelCaixaAbrirFecharJPanel;
     private javax.swing.JPanel painelCaixaJPanel;
     private javax.swing.JPanel painelComandaJPanel;
     private javax.swing.JPanel painelContasPagarJPanel;
     private javax.swing.JPanel painelExpansivoCaixaItemJPanel;
     private javax.swing.JPanel painelExpansivoContasPagarJPanel;
+    private javax.swing.JPanel painelExpansivoFuncionarioJPanel;
     private javax.swing.JPanel painelExpansivoVendasJPanel;
+    private javax.swing.JPanel painelFuncionarioJPanel;
     private javax.swing.JPanel painelMapaComandaJPanel;
     private javax.swing.JPanel painelMenuItemJPanel;
     private javax.swing.JPanel painelReceberContasJPanel;
@@ -987,8 +1219,10 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JPanel painelVendasJPanel;
     private javax.swing.JScrollPane scrollMenuItemJScrollPane;
     private javax.swing.JLabel textoAddContaJLabel;
+    private javax.swing.JLabel textoAddFuncionarioJLabel;
     private javax.swing.JLabel textoBalcaoJLabel;
     private javax.swing.JLabel textoBuscarContaLabel;
+    private javax.swing.JLabel textoBuscarFuncionarioLabel;
     private javax.swing.JLabel textoCaixaAbrirFecharJLabel;
     private javax.swing.JLabel textoComandaJLabel;
     private javax.swing.JLabel textoMapaComandaJLabel;
