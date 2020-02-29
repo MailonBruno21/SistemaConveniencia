@@ -1,5 +1,6 @@
 package view;
 
+import efeitos.EfeitoMenu;
 import extencaoBiblioteca.CustomScrolBarUI;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,12 +17,18 @@ public class MenuView extends javax.swing.JFrame {
     
     
     final int XMENU = 410;
+    private EfeitoMenu efeito;
     
     public MenuView() {
         
         
 
         initComponents();
+        
+        efeito = new EfeitoMenu();
+        
+        
+        
 
     }
 
@@ -195,21 +202,18 @@ public class MenuView extends javax.swing.JFrame {
                 painelBalcaoJPanelMouseExited(evt);
             }
         });
-        painelBalcaoJPanel.setLayout(null);
+        painelBalcaoJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textoBalcaoJLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 24)); // NOI18N
         textoBalcaoJLabel.setText("Balcão");
         textoBalcaoJLabel.setAlignmentY(0.0F);
-        painelBalcaoJPanel.add(textoBalcaoJLabel);
-        textoBalcaoJLabel.setBounds(95, 7, 261, 26);
+        painelBalcaoJPanel.add(textoBalcaoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 7, 261, 26));
 
         iconeBalcao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconeBalcao.png"))); // NOI18N
-        painelBalcaoJPanel.add(iconeBalcao);
-        iconeBalcao.setBounds(15, 0, 40, 41);
+        painelBalcaoJPanel.add(iconeBalcao, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 0, 40, -1));
 
         backgroundBalcaoJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png"))); // NOI18N
-        painelBalcaoJPanel.add(backgroundBalcaoJLabel);
-        backgroundBalcaoJLabel.setBounds(0, 0, 380, 43);
+        painelBalcaoJPanel.add(backgroundBalcaoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, -1));
 
         painelVendasJPanel.add(painelBalcaoJPanel);
         painelBalcaoJPanel.setBounds(0, 27, 382, 50);
@@ -231,14 +235,6 @@ public class MenuView extends javax.swing.JFrame {
         textoComandaJLabel.setText("Comanda");
         textoComandaJLabel.setToolTipText("");
         textoComandaJLabel.setAlignmentY(0.0F);
-        textoComandaJLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                textoComandaJLabelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                textoComandaJLabelMouseExited(evt);
-            }
-        });
         painelComandaJPanel.add(textoComandaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 7, 261, 26));
 
         iconeComanda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconeComanda.png"))); // NOI18N
@@ -792,145 +788,99 @@ public class MenuView extends javax.swing.JFrame {
     //EFEITO NOS ITENS DO MENU VENDAS
     private void painelBalcaoJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBalcaoJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundBalcaoJLabel, painelBalcaoJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        backgroundBalcaoJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelBalcaoJPanel.setBounds(8, 27, 382, 43);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }                    
     }//GEN-LAST:event_painelBalcaoJPanelMouseEntered
 
     private void painelBalcaoJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBalcaoJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundBalcaoJLabel, painelBalcaoJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundBalcaoJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelBalcaoJPanel.setBounds(0, 27, 382, 43);
     }//GEN-LAST:event_painelBalcaoJPanelMouseExited
 
     private void painelComandaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelComandaJPanelMouseEntered
-
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundComandaJLabel, painelComandaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        backgroundComandaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelComandaJPanel.setBounds(8, 77, 382, 43);
-
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_painelComandaJPanelMouseEntered
 
     private void painelComandaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelComandaJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundComandaJLabel, painelComandaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        backgroundComandaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelComandaJPanel.setBounds(0, 77, 382, 43);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_painelComandaJPanelMouseExited
 
     private void painelMapaComandaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelMapaComandaJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundMapaComandaJLabel, painelMapaComandaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundMapaComandaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelMapaComandaJPanel.setBounds(8, 127, 382, 43);
     }//GEN-LAST:event_painelMapaComandaJPanelMouseEntered
 
     private void painelMapaComandaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelMapaComandaJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundMapaComandaJLabel, painelMapaComandaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundMapaComandaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelMapaComandaJPanel.setBounds(0, 127, 382, 43);
     }//GEN-LAST:event_painelMapaComandaJPanelMouseExited
-
-    private void textoComandaJLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoComandaJLabelMouseEntered
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        backgroundComandaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelComandaJPanel.setBounds(8, 77, 382, 43);
-    }//GEN-LAST:event_textoComandaJLabelMouseEntered
-
-    private void textoComandaJLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textoComandaJLabelMouseExited
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        backgroundComandaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelComandaJPanel.setBounds(0, 77, 382, 43);
-    }//GEN-LAST:event_textoComandaJLabelMouseExited
 
     //EFEITO NOS ITENS DO MENU CAIXA
     private void painelCaixaAbrirFecharJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCaixaAbrirFecharJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundCaixaJLabel, painelCaixaAbrirFecharJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundCaixaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelCaixaAbrirFecharJPanel.setBounds(8, 27, 382, 50);
     }//GEN-LAST:event_painelCaixaAbrirFecharJPanelMouseEntered
 
     private void painelCaixaAbrirFecharJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelCaixaAbrirFecharJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundCaixaJLabel, painelCaixaAbrirFecharJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundCaixaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelCaixaAbrirFecharJPanel.setBounds(0, 27, 382, 50);
     }//GEN-LAST:event_painelCaixaAbrirFecharJPanelMouseExited
 
     private void painelRelatorioCaixaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelRelatorioCaixaJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundRelatorioCaixaJLabel, painelRelatorioCaixaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundRelatorioCaixaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelRelatorioCaixaJPanel.setBounds(8, 77, 382, 50);
     }//GEN-LAST:event_painelRelatorioCaixaJPanelMouseEntered
 
     private void painelRelatorioCaixaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelRelatorioCaixaJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundRelatorioCaixaJLabel, painelRelatorioCaixaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundRelatorioCaixaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelRelatorioCaixaJPanel.setBounds(0, 77, 382, 50);
     }//GEN-LAST:event_painelRelatorioCaixaJPanelMouseExited
 
     private void painelReceberContasJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelReceberContasJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundReceberContasJLabel, painelReceberContasJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundReceberContasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelReceberContasJPanel.setBounds(8, 127, 382, 50);
     }//GEN-LAST:event_painelReceberContasJPanelMouseEntered
 
     private void painelReceberContasJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelReceberContasJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundReceberContasJLabel, painelReceberContasJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundReceberContasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelReceberContasJPanel.setBounds(0, 127, 382, 50);
     }//GEN-LAST:event_painelReceberContasJPanelMouseExited
 
     //EFEITO NOS ITENS MENU CONTAS A PAGAR
@@ -998,42 +948,34 @@ public class MenuView extends javax.swing.JFrame {
 
     private void painelBuscarContaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarContaJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundBuscarContaJLabel, painelBuscarContaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundBuscarContaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelBuscarContaJPanel.setBounds(8, 27, 382, 50);
     }//GEN-LAST:event_painelBuscarContaJPanelMouseEntered
 
     private void painelBuscarContaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarContaJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundBuscarContaJLabel, painelBuscarContaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundBuscarContaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelBuscarContaJPanel.setBounds(0, 27, 382, 50);
     }//GEN-LAST:event_painelBuscarContaJPanelMouseExited
 
     private void painelAddContaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddContaJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundAddContaJLabel, painelAddContaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundAddContaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelAddContaJPanel.setBounds(8, 77, 382, 50);
     }//GEN-LAST:event_painelAddContaJPanelMouseEntered
 
     private void painelAddContaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddContaJPanelMouseExited
        try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundAddContaJLabel, painelAddContaJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundAddContaJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelAddContaJPanel.setBounds(0, 77, 382, 50);
     }//GEN-LAST:event_painelAddContaJPanelMouseExited
 
     
@@ -1095,42 +1037,34 @@ public class MenuView extends javax.swing.JFrame {
 
     private void painelBuscarFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundBuscarFuncionarioJLabel, painelBuscarFuncionarioJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundBuscarFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelBuscarFuncionarioJPanel.setBounds(8, 27, XMENU, 50);
     }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseEntered
 
     private void painelBuscarFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundBuscarFuncionarioJLabel, painelBuscarFuncionarioJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundBuscarFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelBuscarFuncionarioJPanel.setBounds(0, 27, XMENU, 50);
     }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseExited
 
     private void painelAddFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseEntered
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundAddFuncionarioJLabel, painelAddFuncionarioJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundAddFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundEfeitoItens.png")));
-        painelAddFuncionarioJPanel.setBounds(8, 77, 382, 50);
     }//GEN-LAST:event_painelAddFuncionarioJPanelMouseEntered
 
     private void painelAddFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseExited
         try {
-            Thread.sleep(10);
+            efeito.EfeitoIcone(backgroundAddFuncionarioJLabel, painelAddFuncionarioJPanel);
         } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        backgroundAddFuncionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/BackgroundItensMenu.png")));
-        painelAddFuncionarioJPanel.setBounds(0, 77, 382, 50);
     }//GEN-LAST:event_painelAddFuncionarioJPanelMouseExited
 
     /**

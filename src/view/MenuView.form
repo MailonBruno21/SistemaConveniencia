@@ -241,7 +241,7 @@
                               </Constraints>
 
                               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                                <Property name="useNullLayout" type="boolean" value="true"/>
+                                <Property name="useNullLayout" type="boolean" value="false"/>
                               </Layout>
                               <SubComponents>
                                 <Component class="javax.swing.JLabel" name="textoBalcaoJLabel">
@@ -278,7 +278,7 @@
                                   </Properties>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="0" y="0" width="380" height="43"/>
+                                      <AbsoluteConstraints x="0" y="0" width="380" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -317,10 +317,6 @@
                                     <Property name="toolTipText" type="java.lang.String" value=""/>
                                     <Property name="alignmentY" type="float" value="0.0"/>
                                   </Properties>
-                                  <Events>
-                                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoComandaJLabelMouseEntered"/>
-                                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textoComandaJLabelMouseExited"/>
-                                  </Events>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                       <AbsoluteConstraints x="95" y="7" width="261" height="26"/>
