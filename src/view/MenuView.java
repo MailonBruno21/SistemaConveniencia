@@ -871,65 +871,22 @@ public class MenuView extends javax.swing.JFrame {
     }//GEN-LAST:event_vendasTextoJLabelMouseExited
 
     private void caixaTextoJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caixaTextoJLabelMouseClicked
+        ExpandirMenu expandir = new ExpandirMenu(painelCaixaJPanel, 3, painelCaixaAbrirFecharJPanel);
+        expandir.DimencionarItem();
+        expandir.RealocaMenu(painelContasPagarJPanel, painelVendasJPanel.getHeight() + painelCaixaJPanel.getHeight());
+        expandir.RealocaMenu(painelFuncionarioJPanel, painelVendasJPanel.getHeight() + painelCaixaJPanel.getHeight() + painelContasPagarJPanel.getHeight());
+        expandir.SetaIndicacao(indicadorVendasJLabel);
 
-        int comparaExp;
-
-        if (painelCaixaAbrirFecharJPanel.isVisible() == false) {
-
-            painelCaixaJPanel.setSize(XMENU, 180);
-
-            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
-            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
-
-            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
-            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
-
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            indicadorCaixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaAberto.png"))); // NOI18N
-
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());
-            painelScrollMenuItemJScrollPane.setPreferredSize(size);
-
+        if (expandir.ControllerBarraScroll(painelScrollMenuItemJScrollPane, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight()) == true) {
             painelCaixaAbrirFecharJPanel.setVisible(true);
             painelRelatorioCaixaJPanel.setVisible(true);
             painelReceberContasJPanel.setVisible(true);
-
         } else {
-
             painelCaixaAbrirFecharJPanel.setVisible(false);
             painelRelatorioCaixaJPanel.setVisible(false);
             painelReceberContasJPanel.setVisible(false);
-
-            indicadorCaixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaFechado.png"))); // NOI18N
-
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            painelCaixaJPanel.setSize(XMENU, painelExpansivoCaixaItemJPanel.getHeight());
-
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
-            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
-
-            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
-            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
-
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());
-            painelScrollMenuItemJScrollPane.setPreferredSize(size);
-
         }
+
     }//GEN-LAST:event_caixaTextoJLabelMouseClicked
 
     private void caixaTextoJLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caixaTextoJLabelMouseEntered
@@ -986,7 +943,7 @@ public class MenuView extends javax.swing.JFrame {
     }//GEN-LAST:event_contasTextoJLabelMouseExited
 
     private void funcionarioTextoJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_funcionarioTextoJLabelMouseClicked
-        
+
         ExpandirMenu expandir = new ExpandirMenu(painelFuncionarioJPanel, 2, painelBuscarFuncionarioJPanel);
         expandir.DimencionarItem();
         expandir.SetaIndicacao(indicadorContasPagarJLabel);
