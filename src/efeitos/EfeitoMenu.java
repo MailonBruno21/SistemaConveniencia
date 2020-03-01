@@ -1,7 +1,5 @@
 package efeitos;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -51,4 +49,17 @@ public class EfeitoMenu {
         this.movimentoX = movimentoX;
     }
 
+    public void EfeitoNegrito(JLabel text, JLabel linha, int evt) throws InterruptedException {
+
+        if (evt == 1) {
+            Thread.sleep(1);
+            text.setText(text.getText().replaceAll("<.*?>", ""));
+            linha.setText(linha.getText().replaceAll("<.*?>", ""));
+        } else {
+            Thread.sleep(1);
+            text.setText("<HTML><b>" + text.getText() + "</b></HTML>");
+            linha.setText("<HTML><b>" + linha.getText() + "</b></HTML>");
+        }
+
+    }
 }

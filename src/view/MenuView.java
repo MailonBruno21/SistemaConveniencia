@@ -1,8 +1,10 @@
 package view;
 
 import efeitos.EfeitoMenu;
+import efeitos.ExpandirMenu;
 import extencaoBiblioteca.CustomScrolBarUI;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,7 +50,8 @@ public class MenuView extends javax.swing.JFrame {
         painelScrollMenuItemJScrollPane = new javax.swing.JPanel();
         painelVendasJPanel = new javax.swing.JPanel();
         painelExpansivoVendasJPanel = new javax.swing.JPanel();
-        vendasJLabel = new javax.swing.JLabel();
+        vendasTextoJLabel = new javax.swing.JLabel();
+        vendasLinhaJLabel = new javax.swing.JLabel();
         indicadorVendasJPanel = new javax.swing.JPanel();
         indicadorVendasJLabel = new javax.swing.JLabel();
         painelBalcaoJPanel = new javax.swing.JPanel();
@@ -65,7 +68,8 @@ public class MenuView extends javax.swing.JFrame {
         backgroundMapaComandaJLabel = new javax.swing.JLabel();
         painelCaixaJPanel = new javax.swing.JPanel();
         painelExpansivoCaixaItemJPanel = new javax.swing.JPanel();
-        caixaItemJLabel = new javax.swing.JLabel();
+        caixaTextoJLabel = new javax.swing.JLabel();
+        caixaLinhaJLabel = new javax.swing.JLabel();
         indicadorCaixaItemJPanel = new javax.swing.JPanel();
         indicadorCaixaItemJLabel = new javax.swing.JLabel();
         painelCaixaAbrirFecharJPanel = new javax.swing.JPanel();
@@ -82,7 +86,8 @@ public class MenuView extends javax.swing.JFrame {
         backgroundReceberContasJLabel = new javax.swing.JLabel();
         painelContasPagarJPanel = new javax.swing.JPanel();
         painelExpansivoContasPagarJPanel = new javax.swing.JPanel();
-        contasPagarJLabel = new javax.swing.JLabel();
+        contasTextoJLabel = new javax.swing.JLabel();
+        contasLinhaJLabel = new javax.swing.JLabel();
         indicadorContasPagarJPanel = new javax.swing.JPanel();
         indicadorContasPagarJLabel = new javax.swing.JLabel();
         painelBuscarContaJPanel = new javax.swing.JPanel();
@@ -95,7 +100,8 @@ public class MenuView extends javax.swing.JFrame {
         backgroundAddContaJLabel = new javax.swing.JLabel();
         painelFuncionarioJPanel = new javax.swing.JPanel();
         painelExpansivoFuncionarioJPanel = new javax.swing.JPanel();
-        funcionarioJLabel = new javax.swing.JLabel();
+        funcionarioTextoJLabel = new javax.swing.JLabel();
+        funcionarioLinhaJLabel = new javax.swing.JLabel();
         indicadorFuncionarioJPanel = new javax.swing.JPanel();
         indicadorFuncionarioJLabel = new javax.swing.JLabel();
         painelBuscarFuncionarioJPanel = new javax.swing.JPanel();
@@ -157,27 +163,35 @@ public class MenuView extends javax.swing.JFrame {
         painelExpansivoVendasJPanel.setMinimumSize(new java.awt.Dimension(380, 20));
         painelExpansivoVendasJPanel.setOpaque(false);
         painelExpansivoVendasJPanel.setPreferredSize(new java.awt.Dimension(380, 20));
-        painelExpansivoVendasJPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                painelExpansivoVendasJPanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                painelExpansivoVendasJPanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                painelExpansivoVendasJPanelMouseExited(evt);
-            }
-        });
         painelExpansivoVendasJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        vendasJLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        try {
-            Thread.sleep(50);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendas.png"))); // NOI18N
-        painelExpansivoVendasJPanel.add(vendasJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 20));
+        vendasTextoJLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 18)); // NOI18N
+        vendasTextoJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        vendasTextoJLabel.setLabelFor(painelExpansivoVendasJPanel);
+        vendasTextoJLabel.setText("Vendas");
+        vendasTextoJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        vendasTextoJLabel.setNextFocusableComponent(painelExpansivoVendasJPanel);
+        vendasTextoJLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vendasTextoJLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                vendasTextoJLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                vendasTextoJLabelMouseExited(evt);
+            }
+        });
+        painelExpansivoVendasJPanel.add(vendasTextoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 27));
+
+        vendasLinhaJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        vendasLinhaJLabel.setText("______________________________________________________");
+        vendasLinhaJLabel.setToolTipText("");
+        vendasLinhaJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        vendasLinhaJLabel.setFocusable(false);
+        vendasLinhaJLabel.setRequestFocusEnabled(false);
+        vendasLinhaJLabel.setVerifyInputWhenFocusTarget(false);
+        painelExpansivoVendasJPanel.add(vendasLinhaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 8, 400, 16));
 
         indicadorVendasJPanel.setOpaque(false);
         indicadorVendasJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -188,7 +202,7 @@ public class MenuView extends javax.swing.JFrame {
         painelExpansivoVendasJPanel.add(indicadorVendasJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 1, 15, 15));
 
         painelVendasJPanel.add(painelExpansivoVendasJPanel);
-        painelExpansivoVendasJPanel.setBounds(0, 0, 382, 27);
+        painelExpansivoVendasJPanel.setBounds(0, 0, 400, 27);
 
         painelBalcaoJPanel.setAlignmentX(0.0F);
         painelBalcaoJPanel.setAlignmentY(0.0F);
@@ -276,7 +290,7 @@ public class MenuView extends javax.swing.JFrame {
         painelMapaComandaJPanel.setBounds(0, 127, 382, 53);
 
         painelScrollMenuItemJScrollPane.add(painelVendasJPanel);
-        painelVendasJPanel.setBounds(0, 0, 382, 180);
+        painelVendasJPanel.setBounds(0, 0, 382, 177);
         painelVendasJPanel.setBounds(0, 0, 382, 27);
 
         painelCaixaJPanel.setMinimumSize(new java.awt.Dimension(380, 160));
@@ -285,22 +299,35 @@ public class MenuView extends javax.swing.JFrame {
         painelCaixaJPanel.setLayout(null);
 
         painelExpansivoCaixaItemJPanel.setOpaque(false);
-        painelExpansivoCaixaItemJPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                painelExpansivoCaixaItemJPanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                painelExpansivoCaixaItemJPanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                painelExpansivoCaixaItemJPanelMouseExited(evt);
-            }
-        });
         painelExpansivoCaixaItemJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        caixaItemJLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        caixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemCaixa.png"))); // NOI18N
-        painelExpansivoCaixaItemJPanel.add(caixaItemJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 20));
+        caixaTextoJLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 18)); // NOI18N
+        caixaTextoJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        caixaTextoJLabel.setLabelFor(painelExpansivoVendasJPanel);
+        caixaTextoJLabel.setText("Caixa");
+        caixaTextoJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        caixaTextoJLabel.setNextFocusableComponent(painelExpansivoVendasJPanel);
+        caixaTextoJLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                caixaTextoJLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                caixaTextoJLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                caixaTextoJLabelMouseExited(evt);
+            }
+        });
+        painelExpansivoCaixaItemJPanel.add(caixaTextoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 27));
+
+        caixaLinhaJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        caixaLinhaJLabel.setText("______________________________________________________");
+        caixaLinhaJLabel.setToolTipText("");
+        caixaLinhaJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        caixaLinhaJLabel.setFocusable(false);
+        caixaLinhaJLabel.setRequestFocusEnabled(false);
+        caixaLinhaJLabel.setVerifyInputWhenFocusTarget(false);
+        painelExpansivoCaixaItemJPanel.add(caixaLinhaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 8, 400, 16));
 
         indicadorCaixaItemJPanel.setOpaque(false);
         indicadorCaixaItemJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -311,7 +338,7 @@ public class MenuView extends javax.swing.JFrame {
         painelExpansivoCaixaItemJPanel.add(indicadorCaixaItemJPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 1, 15, 15));
 
         painelCaixaJPanel.add(painelExpansivoCaixaItemJPanel);
-        painelExpansivoCaixaItemJPanel.setBounds(0, 0, 382, 27);
+        painelExpansivoCaixaItemJPanel.setBounds(0, 0, 400, 27);
 
         painelCaixaAbrirFecharJPanel.setOpaque(false);
         painelCaixaAbrirFecharJPanel.setVisible(false);
@@ -396,7 +423,7 @@ public class MenuView extends javax.swing.JFrame {
         painelReceberContasJPanel.setBounds(0, 127, 382, 50);
 
         painelScrollMenuItemJScrollPane.add(painelCaixaJPanel);
-        painelCaixaJPanel.setBounds(0, 180, 382, 175);
+        painelCaixaJPanel.setBounds(0, 177, 382, 177);
         painelCaixaJPanel.setBounds(0, 27, 382, 27);
 
         painelContasPagarJPanel.setMinimumSize(new java.awt.Dimension(380, 160));
@@ -405,23 +432,36 @@ public class MenuView extends javax.swing.JFrame {
         painelContasPagarJPanel.setLayout(null);
 
         painelExpansivoContasPagarJPanel.setOpaque(false);
-        painelExpansivoContasPagarJPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                painelExpansivoContasPagarJPanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                painelExpansivoContasPagarJPanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                painelExpansivoContasPagarJPanelMouseExited(evt);
-            }
-        });
         painelExpansivoContasPagarJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        contasPagarJLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        contasPagarJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemContasPagar.png"))); // NOI18N
-        contasPagarJLabel.setPreferredSize(new java.awt.Dimension(382, 20));
-        painelExpansivoContasPagarJPanel.add(contasPagarJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 20));
+        contasTextoJLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 18)); // NOI18N
+        contasTextoJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        contasTextoJLabel.setLabelFor(painelExpansivoVendasJPanel);
+        contasTextoJLabel.setText("Receber Contas");
+        contasTextoJLabel.setToolTipText("");
+        contasTextoJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        contasTextoJLabel.setNextFocusableComponent(painelExpansivoVendasJPanel);
+        contasTextoJLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contasTextoJLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                contasTextoJLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                contasTextoJLabelMouseExited(evt);
+            }
+        });
+        painelExpansivoContasPagarJPanel.add(contasTextoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 27));
+
+        contasLinhaJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        contasLinhaJLabel.setText("______________________________________________________");
+        contasLinhaJLabel.setToolTipText("");
+        contasLinhaJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        contasLinhaJLabel.setFocusable(false);
+        contasLinhaJLabel.setRequestFocusEnabled(false);
+        contasLinhaJLabel.setVerifyInputWhenFocusTarget(false);
+        painelExpansivoContasPagarJPanel.add(contasLinhaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 8, 400, 16));
 
         indicadorContasPagarJPanel.setOpaque(false);
         indicadorContasPagarJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -498,23 +538,35 @@ public class MenuView extends javax.swing.JFrame {
         painelFuncionarioJPanel.setLayout(null);
 
         painelExpansivoFuncionarioJPanel.setOpaque(false);
-        painelExpansivoFuncionarioJPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                painelExpansivoFuncionarioJPanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                painelExpansivoFuncionarioJPanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                painelExpansivoFuncionarioJPanelMouseExited(evt);
-            }
-        });
         painelExpansivoFuncionarioJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        funcionarioJLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        funcionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemFuncionario.png"))); // NOI18N
-        funcionarioJLabel.setPreferredSize(new java.awt.Dimension(382, 20));
-        painelExpansivoFuncionarioJPanel.add(funcionarioJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 20));
+        funcionarioTextoJLabel.setFont(new java.awt.Font("Futura Bk BT", 0, 18)); // NOI18N
+        funcionarioTextoJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        funcionarioTextoJLabel.setLabelFor(painelExpansivoVendasJPanel);
+        funcionarioTextoJLabel.setText("Funcionario");
+        funcionarioTextoJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        funcionarioTextoJLabel.setNextFocusableComponent(painelExpansivoVendasJPanel);
+        funcionarioTextoJLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                funcionarioTextoJLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                funcionarioTextoJLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                funcionarioTextoJLabelMouseExited(evt);
+            }
+        });
+        painelExpansivoFuncionarioJPanel.add(funcionarioTextoJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 27));
+
+        funcionarioLinhaJLabel.setForeground(new java.awt.Color(255, 255, 255));
+        funcionarioLinhaJLabel.setText("______________________________________________________");
+        funcionarioLinhaJLabel.setToolTipText("");
+        funcionarioLinhaJLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        funcionarioLinhaJLabel.setFocusable(false);
+        funcionarioLinhaJLabel.setRequestFocusEnabled(false);
+        funcionarioLinhaJLabel.setVerifyInputWhenFocusTarget(false);
+        painelExpansivoFuncionarioJPanel.add(funcionarioLinhaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 8, 400, 16));
 
         indicadorFuncionarioJPanel.setOpaque(false);
         indicadorFuncionarioJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -624,167 +676,6 @@ public class MenuView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    //EXPANDE O TOPICO VENDAS
-    private void painelExpansivoVendasJPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoVendasJPanelMouseClicked
-        int comparaExp;
-        
-        if (painelBalcaoJPanel.isVisible() == false) {
-
-            //DEFINE O TAMANHO DO PAINEL DE OPCOES
-            painelVendasJPanel.setSize(XMENU, 180);
-
-            //"EMPURA OS OUTROS PAINEIS PARA BAIXO"
-            comparaExp = (painelCaixaAbrirFecharJPanel.isVisible() == false) ? 27 : 180;
-            painelCaixaJPanel.setBounds(0, painelVendasJPanel.getHeight(), 392, comparaExp);
-            
-            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
-            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
-            
-            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
-            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
-
-            //TIMER DE PROCESSAMENTO
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            //REDIMENSIONA O PAINEL PARA APARECER A BARRA DE ROLAGEM
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
-             painelScrollMenuItemJScrollPane.setPreferredSize(size);
-             
-            //IMAGEM DO INDICADOR
-            indicadorVendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaAberto.png"))); // NOI18N
-
-            //SETa A VIZUALIZAO POSITIVA PARA AS OPCOES
-            painelBalcaoJPanel.setVisible(true);
-            painelComandaJPanel.setVisible(true);
-            painelMapaComandaJPanel.setVisible(true);
-            
-             
-
-        } else {
-
-            painelBalcaoJPanel.setVisible(false);
-            painelComandaJPanel.setVisible(false);
-            painelMapaComandaJPanel.setVisible(false);
-
-            indicadorVendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaFechado.png"))); // NOI18N
-            
-            
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            painelVendasJPanel.setSize(XMENU, painelExpansivoVendasJPanel.getHeight());
-            
-            //"PUXA OS OUTROS PAINEIS PARA CIMA"
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            comparaExp = (painelCaixaAbrirFecharJPanel.isVisible() == false) ? 27 : 180;
-            painelCaixaJPanel.setBounds(0, painelVendasJPanel.getHeight(), 392, comparaExp);
-            
-            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
-            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
-            
-            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
-            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
-
-            
-            //REDIMENSIONA O PAINEL PARA APARECER A BARRA DE ROLAGEM
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
-            painelScrollMenuItemJScrollPane.setPreferredSize(size);
-        }
-    }//GEN-LAST:event_painelExpansivoVendasJPanelMouseClicked
-
-    //DESTACA EM NEGRITO QUANDO MOUSE PASSA POR CIMA VENDAS
-    private void painelExpansivoVendasJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoVendasJPanelMouseEntered
-        vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png"))); // NOI18N
-
-    }//GEN-LAST:event_painelExpansivoVendasJPanelMouseEntered
-
-    private void painelExpansivoVendasJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoVendasJPanelMouseExited
-        vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendas.png"))); // NOI18N
-    }//GEN-LAST:event_painelExpansivoVendasJPanelMouseExited
-
-//EXPANDE O TOPICO CAIXA
-    private void painelExpansivoCaixaItemJPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoCaixaItemJPanelMouseClicked
-        int comparaExp;
-        
-        if (painelCaixaAbrirFecharJPanel.isVisible() == false) {
-
-            painelCaixaJPanel.setSize(XMENU, 180);
-                   
-                                                        
-            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
-            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
-            
-            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
-            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
-
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            indicadorCaixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaAberto.png"))); // NOI18N
-            
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
-            painelScrollMenuItemJScrollPane.setPreferredSize(size);
-
-            painelCaixaAbrirFecharJPanel.setVisible(true);
-            painelRelatorioCaixaJPanel.setVisible(true);
-            painelReceberContasJPanel.setVisible(true);
-
-        } else {
-
-            painelCaixaAbrirFecharJPanel.setVisible(false);
-            painelRelatorioCaixaJPanel.setVisible(false);
-            painelReceberContasJPanel.setVisible(false);
-
-            indicadorCaixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaFechado.png"))); // NOI18N
-            
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            painelCaixaJPanel.setSize(XMENU, painelExpansivoCaixaItemJPanel.getHeight());
-
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
-            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
-            
-            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
-            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
-            
-            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
-            painelScrollMenuItemJScrollPane.setPreferredSize(size);
-
-        }
-    }//GEN-LAST:event_painelExpansivoCaixaItemJPanelMouseClicked
-
-//DESTACA EM NEGRITO QUANDO MOUSE PASSA POR CIMA CAIXA
-    private void painelExpansivoCaixaItemJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoCaixaItemJPanelMouseEntered
-        caixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemCaixaNegrito.png")));
-    }//GEN-LAST:event_painelExpansivoCaixaItemJPanelMouseEntered
-
-    private void painelExpansivoCaixaItemJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoCaixaItemJPanelMouseExited
-        caixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemCaixa.png")));
-    }//GEN-LAST:event_painelExpansivoCaixaItemJPanelMouseExited
-
     //EFEITO NOS ITENS DO MENU VENDAS
     private void painelBalcaoJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBalcaoJPanelMouseEntered
         try {
@@ -883,8 +774,272 @@ public class MenuView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_painelReceberContasJPanelMouseExited
 
-    //EFEITO NOS ITENS MENU CONTAS A PAGAR
-    private void painelExpansivoContasPagarJPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoContasPagarJPanelMouseClicked
+    private void painelBuscarContaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarContaJPanelMouseEntered
+        try {
+            efeito.EfeitoIcone(backgroundBuscarContaJLabel, painelBuscarContaJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelBuscarContaJPanelMouseEntered
+
+    private void painelBuscarContaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarContaJPanelMouseExited
+        try {
+            efeito.EfeitoIcone(backgroundBuscarContaJLabel, painelBuscarContaJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelBuscarContaJPanelMouseExited
+
+    private void painelAddContaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddContaJPanelMouseEntered
+        try {
+            efeito.EfeitoIcone(backgroundAddContaJLabel, painelAddContaJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelAddContaJPanelMouseEntered
+
+    private void painelAddContaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddContaJPanelMouseExited
+       try {
+            efeito.EfeitoIcone(backgroundAddContaJLabel, painelAddContaJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelAddContaJPanelMouseExited
+
+    
+    private void painelBuscarFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseEntered
+        try {
+            efeito.EfeitoIcone(backgroundBuscarFuncionarioJLabel, painelBuscarFuncionarioJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseEntered
+
+    private void painelBuscarFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseExited
+        try {
+            efeito.EfeitoIcone(backgroundBuscarFuncionarioJLabel, painelBuscarFuncionarioJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseExited
+
+    private void painelAddFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseEntered
+        try {
+            efeito.EfeitoIcone(backgroundAddFuncionarioJLabel, painelAddFuncionarioJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelAddFuncionarioJPanelMouseEntered
+
+    private void painelAddFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseExited
+        try {
+            efeito.EfeitoIcone(backgroundAddFuncionarioJLabel, painelAddFuncionarioJPanel);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_painelAddFuncionarioJPanelMouseExited
+
+    
+    
+    //PAINEL EXPANSIVO MENU
+    
+    private void vendasTextoJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vendasTextoJLabelMouseClicked
+                
+        ExpandirMenu expandir = new ExpandirMenu(painelVendasJPanel, 3 ,painelBalcaoJPanel);
+        expandir.DimencionarItem();
+        expandir.RealocaMenu(painelCaixaJPanel, painelVendasJPanel.getHeight());
+        expandir.RealocaMenu(painelContasPagarJPanel, painelVendasJPanel.getHeight()+ painelCaixaJPanel.getHeight());
+        expandir.RealocaMenu(painelFuncionarioJPanel, painelVendasJPanel.getHeight() + painelCaixaJPanel.getHeight() + painelContasPagarJPanel.getHeight());
+        expandir.SetaIndicacao(indicadorVendasJLabel);
+        
+        if(expandir.ControllerBarraScroll(painelScrollMenuItemJScrollPane, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight())== true){
+            painelBalcaoJPanel.setVisible(true);
+            painelComandaJPanel.setVisible(true);
+            painelMapaComandaJPanel.setVisible(true);
+        }else{
+            painelBalcaoJPanel.setVisible(false);
+            painelComandaJPanel.setVisible(false);
+            painelMapaComandaJPanel.setVisible(false);
+        }
+        
+        
+        
+        /*
+        if (painelBalcaoJPanel.isVisible() == false) {
+
+            //DEFINE O TAMANHO DO PAINEL DE OPCOES
+            painelVendasJPanel.setSize(XMENU, 180);
+
+            //"EMPURA OS OUTROS PAINEIS PARA BAIXO"
+            comparaExp = (painelCaixaAbrirFecharJPanel.isVisible() == false) ? 27 : 180;
+            painelCaixaJPanel.setLocation(0, painelVendasJPanel.getHeight());
+            
+            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
+            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
+            
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
+
+            //TIMER DE PROCESSAMENTO
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //REDIMENSIONA O PAINEL PARA APARECER A BARRA DE ROLAGEM
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
+             painelScrollMenuItemJScrollPane.setPreferredSize(size);
+             
+            //IMAGEM DO INDICADOR
+            indicadorVendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaAberto.png"))); // NOI18N
+
+            //SETa A VIZUALIZAO POSITIVA PARA AS OPCOES
+            painelBalcaoJPanel.setVisible(true);
+            painelComandaJPanel.setVisible(true);
+            painelMapaComandaJPanel.setVisible(true);
+            
+             
+
+        } else {
+
+            painelBalcaoJPanel.setVisible(false);
+            painelComandaJPanel.setVisible(false);
+            painelMapaComandaJPanel.setVisible(false);
+
+            indicadorVendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaFechado.png"))); // NOI18N
+            
+            
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            painelVendasJPanel.setSize(XMENU, painelExpansivoVendasJPanel.getHeight());
+            
+            //"PUXA OS OUTROS PAINEIS PARA CIMA"
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            comparaExp = (painelCaixaAbrirFecharJPanel.isVisible() == false) ? 27 : 180;
+            painelCaixaJPanel.setBounds(0, painelVendasJPanel.getHeight(), 392, comparaExp);
+            
+            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
+            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
+            
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
+
+            
+            //REDIMENSIONA O PAINEL PARA APARECER A BARRA DE ROLAGEM
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
+            painelScrollMenuItemJScrollPane.setPreferredSize(size);
+        }
+        */
+    }//GEN-LAST:event_vendasTextoJLabelMouseClicked
+
+    private void vendasTextoJLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vendasTextoJLabelMouseEntered
+        try {
+            efeito.EfeitoNegrito(vendasTextoJLabel, vendasLinhaJLabel, 0);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_vendasTextoJLabelMouseEntered
+
+    private void vendasTextoJLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vendasTextoJLabelMouseExited
+        try {
+            efeito.EfeitoNegrito(vendasTextoJLabel, vendasLinhaJLabel, 1);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_vendasTextoJLabelMouseExited
+
+    private void caixaTextoJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caixaTextoJLabelMouseClicked
+        int comparaExp;
+        
+        if (painelCaixaAbrirFecharJPanel.isVisible() == false) {
+
+            painelCaixaJPanel.setSize(XMENU, 180);
+                   
+                                                        
+            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
+            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
+            
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
+
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            indicadorCaixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaAberto.png"))); // NOI18N
+            
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
+            painelScrollMenuItemJScrollPane.setPreferredSize(size);
+
+            painelCaixaAbrirFecharJPanel.setVisible(true);
+            painelRelatorioCaixaJPanel.setVisible(true);
+            painelReceberContasJPanel.setVisible(true);
+
+        } else {
+
+            painelCaixaAbrirFecharJPanel.setVisible(false);
+            painelRelatorioCaixaJPanel.setVisible(false);
+            painelReceberContasJPanel.setVisible(false);
+
+            indicadorCaixaItemJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/SetaFechado.png"))); // NOI18N
+            
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            painelCaixaJPanel.setSize(XMENU, painelExpansivoCaixaItemJPanel.getHeight());
+
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            comparaExp = (painelBuscarContaJPanel.isVisible() == false) ? 27 : 127;
+            painelContasPagarJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight(), XMENU, comparaExp);
+            
+            comparaExp = (painelBuscarFuncionarioJPanel.isVisible() == false) ? 27 : 127;
+            painelFuncionarioJPanel.setBounds(0, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight() + painelContasPagarJPanel.getHeight(), XMENU, comparaExp);
+            
+            Dimension size = new Dimension(XMENU, painelCaixaJPanel.getHeight() + painelVendasJPanel.getHeight()+painelContasPagarJPanel.getHeight() + painelFuncionarioJPanel.getHeight());                        
+            painelScrollMenuItemJScrollPane.setPreferredSize(size);
+
+        }
+    }//GEN-LAST:event_caixaTextoJLabelMouseClicked
+
+    private void caixaTextoJLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caixaTextoJLabelMouseEntered
+        try {
+            efeito.EfeitoNegrito(caixaTextoJLabel, caixaLinhaJLabel, 0);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_caixaTextoJLabelMouseEntered
+
+    private void caixaTextoJLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caixaTextoJLabelMouseExited
+        try {
+            efeito.EfeitoNegrito(caixaTextoJLabel, caixaLinhaJLabel, 1);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_caixaTextoJLabelMouseExited
+
+    private void contasTextoJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contasTextoJLabelMouseClicked
          int comparaExp;
         if (painelBuscarContaJPanel.isVisible() == false) {
 
@@ -936,51 +1091,27 @@ public class MenuView extends javax.swing.JFrame {
             painelScrollMenuItemJScrollPane.setPreferredSize(size);
 
         }
+    }//GEN-LAST:event_contasTextoJLabelMouseClicked
 
-    }//GEN-LAST:event_painelExpansivoContasPagarJPanelMouseClicked
-
-    private void painelExpansivoContasPagarJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoContasPagarJPanelMouseEntered
-        contasPagarJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemContasPagarNegrito.png")));
-    }//GEN-LAST:event_painelExpansivoContasPagarJPanelMouseEntered
-
-    private void painelExpansivoContasPagarJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoContasPagarJPanelMouseExited
-        contasPagarJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemContasPagar.png")));    }//GEN-LAST:event_painelExpansivoContasPagarJPanelMouseExited
-
-    private void painelBuscarContaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarContaJPanelMouseEntered
+    private void contasTextoJLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contasTextoJLabelMouseEntered
         try {
-            efeito.EfeitoIcone(backgroundBuscarContaJLabel, painelBuscarContaJPanel);
+            efeito.EfeitoNegrito(contasTextoJLabel, contasLinhaJLabel, 0);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
         } catch (InterruptedException ex) {
             Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_painelBuscarContaJPanelMouseEntered
+    }//GEN-LAST:event_contasTextoJLabelMouseEntered
 
-    private void painelBuscarContaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarContaJPanelMouseExited
+    private void contasTextoJLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contasTextoJLabelMouseExited
         try {
-            efeito.EfeitoIcone(backgroundBuscarContaJLabel, painelBuscarContaJPanel);
+            efeito.EfeitoNegrito(contasTextoJLabel, contasLinhaJLabel, 1);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
         } catch (InterruptedException ex) {
             Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_painelBuscarContaJPanelMouseExited
+    }//GEN-LAST:event_contasTextoJLabelMouseExited
 
-    private void painelAddContaJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddContaJPanelMouseEntered
-        try {
-            efeito.EfeitoIcone(backgroundAddContaJLabel, painelAddContaJPanel);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_painelAddContaJPanelMouseEntered
-
-    private void painelAddContaJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddContaJPanelMouseExited
-       try {
-            efeito.EfeitoIcone(backgroundAddContaJLabel, painelAddContaJPanel);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_painelAddContaJPanelMouseExited
-
-    
-    //EFEITO NOS ITENS MENU FUNCIONARIO
-    private void painelExpansivoFuncionarioJPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoFuncionarioJPanelMouseClicked
+    private void funcionarioTextoJLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_funcionarioTextoJLabelMouseClicked
         if (painelBuscarFuncionarioJPanel.isVisible() == false) {
 
             painelFuncionarioJPanel.setSize(XMENU, 127);
@@ -1025,47 +1156,25 @@ public class MenuView extends javax.swing.JFrame {
             painelScrollMenuItemJScrollPane.setPreferredSize(size);
 
         }
-    }//GEN-LAST:event_painelExpansivoFuncionarioJPanelMouseClicked
+    }//GEN-LAST:event_funcionarioTextoJLabelMouseClicked
 
-    private void painelExpansivoFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoFuncionarioJPanelMouseEntered
-        funcionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemFuncionarioNegrito.png")));
-    }//GEN-LAST:event_painelExpansivoFuncionarioJPanelMouseEntered
-
-    private void painelExpansivoFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelExpansivoFuncionarioJPanelMouseExited
-        funcionarioJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemFuncionario.png")));
-    }//GEN-LAST:event_painelExpansivoFuncionarioJPanelMouseExited
-
-    private void painelBuscarFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseEntered
+    private void funcionarioTextoJLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_funcionarioTextoJLabelMouseEntered
         try {
-            efeito.EfeitoIcone(backgroundBuscarFuncionarioJLabel, painelBuscarFuncionarioJPanel);
+            efeito.EfeitoNegrito(funcionarioTextoJLabel, funcionarioLinhaJLabel, 0);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
         } catch (InterruptedException ex) {
             Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseEntered
+    }//GEN-LAST:event_funcionarioTextoJLabelMouseEntered
 
-    private void painelBuscarFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelBuscarFuncionarioJPanelMouseExited
+    private void funcionarioTextoJLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_funcionarioTextoJLabelMouseExited
         try {
-            efeito.EfeitoIcone(backgroundBuscarFuncionarioJLabel, painelBuscarFuncionarioJPanel);
+            efeito.EfeitoNegrito(funcionarioTextoJLabel, funcionarioLinhaJLabel, 1);
+        //vendasJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ItemVendasNegrito.png")));
         } catch (InterruptedException ex) {
             Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_painelBuscarFuncionarioJPanelMouseExited
-
-    private void painelAddFuncionarioJPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseEntered
-        try {
-            efeito.EfeitoIcone(backgroundAddFuncionarioJLabel, painelAddFuncionarioJPanel);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_painelAddFuncionarioJPanelMouseEntered
-
-    private void painelAddFuncionarioJPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_painelAddFuncionarioJPanelMouseExited
-        try {
-            efeito.EfeitoIcone(backgroundAddFuncionarioJLabel, painelAddFuncionarioJPanel);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_painelAddFuncionarioJPanelMouseExited
+    }//GEN-LAST:event_funcionarioTextoJLabelMouseExited
 
     /**
      * @param args the command line arguments
@@ -1106,9 +1215,12 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundMapaComandaJLabel;
     private javax.swing.JLabel backgroundReceberContasJLabel;
     private javax.swing.JLabel backgroundRelatorioCaixaJLabel;
-    private javax.swing.JLabel caixaItemJLabel;
-    private javax.swing.JLabel contasPagarJLabel;
-    private javax.swing.JLabel funcionarioJLabel;
+    private javax.swing.JLabel caixaLinhaJLabel;
+    private javax.swing.JLabel caixaTextoJLabel;
+    private javax.swing.JLabel contasLinhaJLabel;
+    private javax.swing.JLabel contasTextoJLabel;
+    private javax.swing.JLabel funcionarioLinhaJLabel;
+    private javax.swing.JLabel funcionarioTextoJLabel;
     private javax.swing.JLabel iconeAddConta;
     private javax.swing.JLabel iconeAddFuncionario;
     private javax.swing.JLabel iconeBalcao;
@@ -1162,6 +1274,7 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JLabel textoMapaComandaJLabel;
     private javax.swing.JLabel textoReceberContaJLabel;
     private javax.swing.JLabel textoRelatorioCaixaJLabel;
-    private javax.swing.JLabel vendasJLabel;
+    private javax.swing.JLabel vendasLinhaJLabel;
+    private javax.swing.JLabel vendasTextoJLabel;
     // End of variables declaration//GEN-END:variables
 }

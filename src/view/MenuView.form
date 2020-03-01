@@ -145,7 +145,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="0" y="0" width="382" height="180"/>
+                              <AbsoluteConstraints x="0" y="0" width="382" height="177"/>
                             </Constraint>
                           </Constraints>
 
@@ -163,14 +163,9 @@
                                   <Dimension value="[380, 20]"/>
                                 </Property>
                               </Properties>
-                              <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoVendasJPanelMouseClicked"/>
-                                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoVendasJPanelMouseEntered"/>
-                                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoVendasJPanelMouseExited"/>
-                              </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="0" y="0" width="382" height="27"/>
+                                  <AbsoluteConstraints x="0" y="0" width="400" height="27"/>
                                 </Constraint>
                               </Constraints>
 
@@ -178,16 +173,49 @@
                                 <Property name="useNullLayout" type="boolean" value="false"/>
                               </Layout>
                               <SubComponents>
-                                <Component class="javax.swing.JLabel" name="vendasJLabel">
+                                <Component class="javax.swing.JLabel" name="vendasTextoJLabel">
                                   <Properties>
-                                    <Property name="horizontalAlignment" type="int" value="11" postCode="try {&#xa;                Thread.sleep(50);&#xa;            } catch (InterruptedException ex) {&#xa;                Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);&#xa;            }"/>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/imagens/ItemVendas.png"/>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Futura Bk BT" size="18" style="0"/>
                                     </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Vendas"/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="vendasTextoJLabelMouseClicked"/>
+                                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="vendasTextoJLabelMouseEntered"/>
+                                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="vendasTextoJLabelMouseExited"/>
+                                  </Events>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                      <AbsoluteConstraints x="0" y="0" width="400" height="27"/>
+                                    </Constraint>
+                                  </Constraints>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="vendasLinhaJLabel">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="______________________________________________________"/>
+                                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="focusable" type="boolean" value="false"/>
+                                    <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                                    <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
                                   </Properties>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="0" y="0" width="380" height="20"/>
+                                      <AbsoluteConstraints x="0" y="8" width="400" height="16"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -432,7 +460,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="0" y="180" width="382" height="175"/>
+                              <AbsoluteConstraints x="0" y="177" width="382" height="177"/>
                             </Constraint>
                           </Constraints>
 
@@ -444,14 +472,9 @@
                               <Properties>
                                 <Property name="opaque" type="boolean" value="false"/>
                               </Properties>
-                              <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoCaixaItemJPanelMouseClicked"/>
-                                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoCaixaItemJPanelMouseEntered"/>
-                                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoCaixaItemJPanelMouseExited"/>
-                              </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="0" y="0" width="382" height="27"/>
+                                  <AbsoluteConstraints x="0" y="0" width="400" height="27"/>
                                 </Constraint>
                               </Constraints>
 
@@ -459,16 +482,49 @@
                                 <Property name="useNullLayout" type="boolean" value="false"/>
                               </Layout>
                               <SubComponents>
-                                <Component class="javax.swing.JLabel" name="caixaItemJLabel">
+                                <Component class="javax.swing.JLabel" name="caixaTextoJLabel">
                                   <Properties>
-                                    <Property name="horizontalAlignment" type="int" value="11"/>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/imagens/ItemCaixa.png"/>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Futura Bk BT" size="18" style="0"/>
                                     </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Caixa"/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="caixaTextoJLabelMouseClicked"/>
+                                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="caixaTextoJLabelMouseEntered"/>
+                                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="caixaTextoJLabelMouseExited"/>
+                                  </Events>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                      <AbsoluteConstraints x="0" y="0" width="400" height="27"/>
+                                    </Constraint>
+                                  </Constraints>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="caixaLinhaJLabel">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="______________________________________________________"/>
+                                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="focusable" type="boolean" value="false"/>
+                                    <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                                    <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
                                   </Properties>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="0" y="0" width="380" height="20"/>
+                                      <AbsoluteConstraints x="0" y="8" width="400" height="16"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -722,11 +778,6 @@
                               <Properties>
                                 <Property name="opaque" type="boolean" value="false"/>
                               </Properties>
-                              <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoContasPagarJPanelMouseClicked"/>
-                                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoContasPagarJPanelMouseEntered"/>
-                                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoContasPagarJPanelMouseExited"/>
-                              </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="0" y="0" width="382" height="27"/>
@@ -737,19 +788,50 @@
                                 <Property name="useNullLayout" type="boolean" value="false"/>
                               </Layout>
                               <SubComponents>
-                                <Component class="javax.swing.JLabel" name="contasPagarJLabel">
+                                <Component class="javax.swing.JLabel" name="contasTextoJLabel">
                                   <Properties>
-                                    <Property name="horizontalAlignment" type="int" value="11"/>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/imagens/ItemContasPagar.png"/>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Futura Bk BT" size="18" style="0"/>
                                     </Property>
-                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                                      <Dimension value="[382, 20]"/>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
+                                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Receber Contas"/>
+                                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="contasTextoJLabelMouseClicked"/>
+                                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="contasTextoJLabelMouseEntered"/>
+                                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="contasTextoJLabelMouseExited"/>
+                                  </Events>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                      <AbsoluteConstraints x="0" y="0" width="400" height="27"/>
+                                    </Constraint>
+                                  </Constraints>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="contasLinhaJLabel">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="______________________________________________________"/>
+                                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="focusable" type="boolean" value="false"/>
+                                    <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                                    <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
                                   </Properties>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="0" y="0" width="380" height="20"/>
+                                      <AbsoluteConstraints x="0" y="8" width="400" height="16"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -938,11 +1020,6 @@
                               <Properties>
                                 <Property name="opaque" type="boolean" value="false"/>
                               </Properties>
-                              <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoFuncionarioJPanelMouseClicked"/>
-                                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoFuncionarioJPanelMouseEntered"/>
-                                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="painelExpansivoFuncionarioJPanelMouseExited"/>
-                              </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="0" y="0" width="382" height="27"/>
@@ -953,19 +1030,49 @@
                                 <Property name="useNullLayout" type="boolean" value="false"/>
                               </Layout>
                               <SubComponents>
-                                <Component class="javax.swing.JLabel" name="funcionarioJLabel">
+                                <Component class="javax.swing.JLabel" name="funcionarioTextoJLabel">
                                   <Properties>
-                                    <Property name="horizontalAlignment" type="int" value="11"/>
-                                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                      <Image iconType="3" name="/imagens/ItemFuncionario.png"/>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Futura Bk BT" size="18" style="0"/>
                                     </Property>
-                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                                      <Dimension value="[382, 20]"/>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
+                                    <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Funcionario"/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                                      <ComponentRef name="painelExpansivoVendasJPanel"/>
+                                    </Property>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="funcionarioTextoJLabelMouseClicked"/>
+                                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="funcionarioTextoJLabelMouseEntered"/>
+                                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="funcionarioTextoJLabelMouseExited"/>
+                                  </Events>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                      <AbsoluteConstraints x="0" y="0" width="400" height="27"/>
+                                    </Constraint>
+                                  </Constraints>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="funcionarioLinhaJLabel">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="______________________________________________________"/>
+                                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                                    <Property name="verticalAlignment" type="int" value="1"/>
+                                    <Property name="focusable" type="boolean" value="false"/>
+                                    <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                                    <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
                                   </Properties>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="0" y="0" width="380" height="20"/>
+                                      <AbsoluteConstraints x="0" y="8" width="400" height="16"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
